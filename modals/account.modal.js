@@ -1,24 +1,26 @@
 import mongoose from "mongoose";
 const schema = new mongoose.Schema({
-    name: {
+    user: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
         type: String,
         required: true
     },
-    price: {
+    avatar: {
+        type: String,
+    },
+    age: {
         type: Number,
         required: true
     },
-    color: {
-        type: String,
-        required: true
-    },
-    imgMain: {
-        type: String,
-        required: true
-    },
-    imgSub: {
+    sex: {
         type: String,
         required: true
     }
+
 })
-export const ProductMen = mongoose.model('men', schema)
+const account = mongoose.model('account', schema)
+export default account

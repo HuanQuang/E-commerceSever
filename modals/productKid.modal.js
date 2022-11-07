@@ -2,23 +2,23 @@ import mongoose from "mongoose";
 const schema = new mongoose.Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     price: {
         type: Number,
-        require: true
+        required: true
     },
     color: {
         type: String,
-        require: true
+        required: true
     },
     imgMain: {
         type: String,
-        require: true
+        required: true
     },
     imgSub: {
         type: String,
-        require: true
+        required: true
     }
 })
 

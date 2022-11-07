@@ -7,6 +7,7 @@ dotenv.config()
 import productMan from './router/productMan.router.js'
 import productWomen  from "./router/productWoman.router.js";
 import productKid from './router/productKid.router.js'
+import account from "./router/account.router.js";
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -21,6 +22,7 @@ app.use(express.json())
 app.use('/api/donam', productMan) 
 app.use('/api/donu', productWomen)
 app.use('/api/dotreem', productKid)
+app.use('/api/account', account)
 mongoose.connect(uri, {
     useUnifiedTopology: true,
     useNewUrlParser: true
