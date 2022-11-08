@@ -44,9 +44,9 @@ export const deleteAccount = async (req, res) => {
 }
 
 export const login = async (req, res) => {
+    try {
         const user = req.body.user
         const password = req.body.password
-    try {
         const checkAccount = await account.findOne({user: user, password: password})
         if(checkAccount){
             console.log(checkAccount)
