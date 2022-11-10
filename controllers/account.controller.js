@@ -49,15 +49,13 @@ export const login = async (req, res) => {
         const password = req.body.password
         const checkAccount = await account.findOne({user: user, password: password})
         if(checkAccount){
-            console.log(checkAccount)
             const token = jwt.sign({id:checkAccount._id},'haibara',)
             return res.status(200).json({
                 message: 'Đăng nhập thành công',
                 token: token,
                 user: checkAccount.user})
         } else return res.status(200).json({
-            message: 'Sai tên đăng nhập hoặc mật khẩu',
-            err: err
+            message: 'Sai tên đăng nhập hoặc mật khẩu'
         })
     }
     catch (error){
